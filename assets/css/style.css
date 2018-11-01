@@ -7514,6 +7514,9 @@ perspective effects (not including the modals and the overlay).
     font-weight: 700;
     min-width: 130px;
 }
+.new-customer-submit{
+	margin-top:0px;
+}
 .modal-perspective,
 .modal-perspective body {
   height: 100%;
@@ -20429,4 +20432,7 @@ fieldset[disabled] .full-calendar .fc-button.active {
   .lg-mb-0 {
     margin-bottom: 0px !important;
   }
+}
+.new-customer-submit{
+	margin-top:0px !important;
 }
