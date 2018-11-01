@@ -12433,6 +12433,9 @@ li.L9 {
 /*------------------------------------------------------------------
   [Gallery]
 */
+.item-menu-img{
+	float:left;
+}
 .gallery-container .item {
   width: 25%;
   margin-bottom: 20px;
