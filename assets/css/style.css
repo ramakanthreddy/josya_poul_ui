@@ -7509,7 +7509,7 @@ perspective effects (not including the modals and the overlay).
     overflow:auto;
     width:100%;
 }
-#table1 > thead > tr > th {
+.customer-balance-details > tbody > tr > td {
     border-bottom-width: 2px;
     font-weight: 700;
     min-width: 130px;
