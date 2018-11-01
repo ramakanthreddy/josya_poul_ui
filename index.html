@@ -295,6 +295,7 @@
       <div class="be-content">
         <div class="main-content container-fluid">
           <div class="gallery-container" id="productDisplay">
+		  <div class="item" ><div class="photo"><div class="img"><a href="#" class="openModal" ><img  src="assets/img/gallery/img2.jpg" alt="Gallery Image"    ></a></div></div></div>
           </div>
         </div>
       </div>
@@ -368,6 +369,10 @@
 
       		}
       	});
+					      			$("a.openModal").click(function (e) {
+      				e.preventDefault();
+      				$('#expenditureSec').modal('toggle');
+      			});
       	App.init();
       	App.dashboard();
       });
