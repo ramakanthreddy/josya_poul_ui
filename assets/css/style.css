@@ -7509,6 +7509,11 @@ perspective effects (not including the modals and the overlay).
     overflow:auto;
     width:100%;
 }
+#table1 > thead > tr > th {
+    border-bottom-width: 2px;
+    font-weight: 700;
+    min-width: 130px;
+}
 .modal-perspective,
 .modal-perspective body {
   height: 100%;
