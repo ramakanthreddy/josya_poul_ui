@@ -8643,7 +8643,7 @@ canvas {
   bottom: -12px;
 }
 .be-icons-nav > li.dropdown .dropdown-menu {
-  width: 300px;
+  width: 100px;
   border-radius: 3px;
   padding: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
@@ -8938,7 +8938,7 @@ canvas {
 }
 .be-notifications .notification {
   overflow: hidden;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 5px solid #ebebeb;
 }
 .be-notifications .notification > a {
   padding: 15px;
@@ -17104,6 +17104,7 @@ fieldset[disabled] .btn-color.btn-evernote.active {
 .table > tbody > tr > td {
   font-weight: 400;
   vertical-align: middle;
+  border-left: 1px solid #e4dfdf;
 }
 .table-condensed > thead > tr > th {
   padding-top: 10px;

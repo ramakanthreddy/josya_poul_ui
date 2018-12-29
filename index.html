@@ -45,13 +45,13 @@
             <div class="page-title"><span>Dashboard</span></div>
             <ul class="nav navbar-nav navbar-right be-icons-nav">
               <li class="dropdown"><a href="#" role="button" aria-expanded="false" class="be-toggle-right-sidebar"><span class="icon mdi mdi-settings"></span></a></li>
-              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-notifications"></span><span class="indicator"></span></a>
+              <!--<li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-notifications"></span><span class="indicator"></span></a>
                 <ul class="dropdown-menu be-notifications">
                   <li>
                     <div class="title">Notifications<span class="badge">3</span></div>
                     <div class="list">
                       <div class="be-scroller">
-                        <div class="content">
+                         <div class="content">
                           <ul>
                             <li class="notification notification-unread"><a href="#">
                                 <div class="image"><img src="assets/img/avatar2.png" alt="Avatar"></div>
@@ -72,34 +72,77 @@
                                 <div class="image"><img src="assets/img/avatar5.png" alt="Avatar"></div>
                                 <div class="notification-info"><span class="text"><span class="user-name">Emily Carter</span> is now following you</span><span class="date">5 days ago</span></div></a></li>
                           </ul>
-                        </div>
+                        </div> 
                       </div>
                     </div>
                     <div class="footer"> <a href="#">View all notifications</a></div>
                   </li>
                 </ul>
-              </li>
-              <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-apps"></span></a>
-                <ul class="dropdown-menu be-connections">
+              </li>-->
+              <li class="dropdown">
+                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">
+                  <img src="assets/img/daily-price.png" style="width:30px;" id="dailyprice-entry" data-toggle="modal" data-target="#price-input"></span>
+                </a>
+                <ul class="dropdown-menu be-notifications">
                   <li>
+                    <div class="title">Daily Price</div>
                     <div class="list">
-                      <div class="content">
-                        <div class="row">
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="assets/img/github.png" alt="Github"><span>GitHub</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="assets/img/bitbucket.png" alt="Bitbucket"><span>Bitbucket</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="assets/img/slack.png" alt="Slack"><span>Slack</span></a></div>
-                        </div>
-                        <div class="row">
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="assets/img/dribbble.png" alt="Dribbble"><span>Dribbble</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="assets/img/mail_chimp.png" alt="Mail Chimp"><span>Mail Chimp</span></a></div>
-                          <div class="col-xs-4"><a href="#" class="connection-item"><img src="assets/img/dropbox.png" alt="Dropbox"><span>Dropbox</span></a></div>
-                        </div>
+                      <div class="be-scroller">
+                         <div class="content">
+                          <ul>
+                            <li class="notification">
+                              <img src="assets/img/slack.png"> Paper Price : <span>100</span>
+                            </li>
+                            <li class="notification">
+                              <img src="assets/img/slack.png"> Live : <span>100</span>
+                            </li>
+                            <li class="notification">
+                              <img src="assets/img/slack.png"> Chicken : <span>100</span>
+                            </li>
+                            <li class="notification">
+                              <img src="assets/img/slack.png"> Boneless : <span>100</span>
+                            </li>
+                            <li class="notification">
+                              <img src="assets/img/slack.png"> Order : <span>100</span>
+                            </li>
+                            <li class="notification">
+                              <img src="assets/img/slack.png"> Skinless : <span>100</span>
+                            </li>
+                          </ul>
+                        </div> 
                       </div>
                     </div>
-                    <div class="footer"> <a href="#">More</a></div>
                   </li>
                 </ul>
               </li>
+             <!--  <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle"><span class="icon mdi mdi-apps"></span></a>
+                <ul class="dropdown-menu be-connections">
+                  <li>
+                    <div class="title">Daily Price</div>
+                    <div class="list">
+                      <div class="content">
+                        <ul style="list-style: none;">
+                            <li class="notification notification-unread">
+                              
+                            </li>
+                            <li class="notification">
+                              
+                            </li>
+                            <li class="notification">
+                              
+                            </li>
+                            <li class="notification">
+                              
+                            </li>
+                            <li class="notification">
+                              
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>-->
             </ul>
           </div>
         </div>
@@ -368,7 +411,7 @@
               </div>
             </div>
           </div>
-			<input type="button" value="submit"	class="dailySubmit submitPrint" id="dailyPrice" />
+			<!-- <input type="button" value="submit"	class="dailySubmit submitPrint" id="dailyPrice" /> -->
 		    </div>
       </div>
     </div>
@@ -404,13 +447,42 @@
               </div>
             </div>
           </div>
-      <input type="button" value="submit" class="dailySubmit submitPrint" id="dailyPrice" />
+      <!-- <input type="button" value="submit" class="dailySubmit submitPrint" id="dailyPrice" />-->
         </div>
       </div>
     </div>
   </div>
   <!-- three fields -->
 
+  <!-- Price entry -->
+  <div class="modal fade" id="price-input" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Daily Price</h4>
+        </div>
+        <div class="modal-body">
+          <div class="modal-inputs"><img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input type="text" name=""></div>
+          <div class="modal-inputs"><img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input type="text" name=""></div>
+          <div class="modal-inputs"><img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input type="text" name=""></div>
+          <div class="modal-inputs"><img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input type="text" name=""></div>
+          <div class="modal-inputs"><img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input type="text" name=""></div>
+          <div class="modal-inputs"><img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input type="text" name=""></div>
+        </div>
+        <div class="modal-submit">
+          <input type="button" class="price-submits" value="Submit" name="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Price entry -->
     <script src="assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="assets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
     <script src="assets/js/main.js" type="text/javascript"></script>
