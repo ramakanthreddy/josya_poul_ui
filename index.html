@@ -426,7 +426,7 @@
         <div class="modal-body">
            <div class="modalContainer row">
             <div class="col-md-12 categ-image">
-              <img src="assets/img/gallery/img2.jpg" class="selectedImg" alt="selectedCateg">
+              <img class="selectedImg" alt="selectedCateg">
             </div>
             <div class="col-md-4 inputContainer">
               <div class="priceInput">
@@ -515,23 +515,27 @@
       					url: '/product/image/' + response[count].productCode,
       					async: false,
       					success: function (data) {
-      						imgStr += '<div class="item" ><div class="photo"><div class="img"><a href="#" class="openModal" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image"    ></a></div></div></div>';
+      						imgStr += '<div class="item" ><div class="photo"><div class="img"><a href="#" class="openModal" data-modal="'+ response[count].birdCountRequired+'" data-imgsrc="'+data+'" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image"    ></a></div></div></div>';
       					}
       				});
       			}
       			$('#productDisplay').html(imgStr);
-      			App.pageGallery();
       			$("a.openModal").click(function (e) {
+					var modalType = $(this).data('modal');
       				e.preventDefault();
-      				$('#expenditureSec').modal('toggle');
+					if(modalType != undefined && 'n' == modalType.toLowerCase()){
+						$('#expenditureSec').modal('toggle');
+					} else {
+						
+						$('#expenditureThreeSec').modal('toggle');
+						$('.selectedImg').attr('src', 'data:image/png;base64, '+$(this).data('imgsrc'));
+					}
+      				
       			});
 
       		}
       	});
-					      			$("a.openModal").click(function (e) {
-      				e.preventDefault();
-      				$('#expenditureThreeSec').modal('toggle');
-      			});
+		App.pageGallery();
       	App.init();
       	App.dashboard();
       });
