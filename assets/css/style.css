@@ -8930,7 +8930,6 @@ canvas {
 }
 .be-notifications .be-scroller {
   position: relative;
-  height: 222px;
 }
 .be-notifications .be-scroller > .content > ul {
   list-style: none;
