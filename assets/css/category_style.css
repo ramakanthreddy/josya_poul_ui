@@ -290,8 +290,9 @@ hr {
 .priceUpdates{
 	margin:5px 0px;
 }
-.daily-price-catimg{
+.daily-price-catimg{    
     margin: 0px 10px;
+    width: 50px;
 }
 .modal-inputs{
     text-align: center;
