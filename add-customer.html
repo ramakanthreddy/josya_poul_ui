@@ -114,10 +114,11 @@
               <div class="panel panel-default panel-border-color panel-border-color-primary">
                 <div class="panel-heading panel-heading-divider">Customer Details<span class="panel-subtitle">Customer details need to be added here</span></div>
                 <div class="panel-body">
-                  <form action="#" data-parsley-validate="" novalidate="">
+                  <form enctype="multipart/form-data" action="#" id="add-customer" data-parsley-validate="" novalidate="">
+                  <div class="form-group" id="success-message"></div>
 					<div class="form-group">
                       <label>Customer name</label>
-                      <input type="text" name="custName" parsley-trigger="change" required="" placeholder="Enter customer name" autocomplete="off" class="form-control">
+                      <input type="text" name="name" parsley-trigger="change" required="" placeholder="Enter customer name" autocomplete="off" class="form-control">
                     </div>
                     <div class="form-group">
                       <label>Mobile number</label>
@@ -130,7 +131,7 @@
                     <div class="form-group">
                       <div class="col-xs-6">
                         <p class="text-right">
-                          <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                          <button type="submit"  class="btn btn-space btn-primary">Submit</button>
                           <button class="btn btn-space btn-default">Cancel</button>
                         </p>
                       </div>
@@ -155,13 +156,6 @@
     <script src="assets/lib/bootstrap-slider/js/bootstrap-slider.js" type="text/javascript"></script>
     <script src="assets/js/app-form-elements.js" type="text/javascript"></script>
 	<script src="assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-      	//initialize the javascript
-      	App.init();
-      	App.formElements();
-		$('form').parsley();
-      });
-    </script>
+    <script src="src/customer/customer.js" type="text/javascript"></script>
   </body>
 </html>

@@ -17090,9 +17090,14 @@ fieldset[disabled] .btn-color.btn-evernote.active {
 /*------------------------------------------------------------------
   [Tables]
 */
+input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+    display: none;
+}
 .table > thead > tr > th {
   border-bottom-width: 2px;
   font-weight: 700;
+  text-align: center;
+  min-width: 80px;
 }
 .table > thead.primary > tr > th {
   color: #4285f4;

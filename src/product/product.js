@@ -13,7 +13,8 @@ $(document).ready(
 							success : function(data) {
 								response[count].image = data;
 								imgStr += '<div class="item" ><div class="photo"><div class="img"><a href="#" class="openModal" data-modal="' + response[count].birdCountRequired + '" data-imgsrc="' + data
-										+ '" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image"    ></a></div></div></div>';
+										+ '" data-price="' + response[count].price + '" data-productcode="' + response[count].productCode + '" data-birdCountRequired="' + response[count].birdCountRequired
+										+ '"><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
 							}
 						});
 						var product = createProduct(response[count]);
@@ -26,10 +27,22 @@ $(document).ready(
 						if (modalType == undefined || 'n' == modalType.toLowerCase()) {
 							$('#expenditureSec').modal('toggle');
 							$('.selectedImg').attr('src', 'data:image/png;base64, ' + $(this).data('imgsrc'));
+							sessionStorage.setItem('billing', 'true');
+							sessionStorage.setItem('price', $(this).data('price'));
+							sessionStorage.setItem('productCode', $(this).data('productcode'));
+							sessionStorage.setItem('birdCountRequired', $(this).data('birdcountrequired'));
+							clearBillingValues();
+							registerBillingFunctions();
 						} else {
 
 							$('#expenditureThreeSec').modal('toggle');
 							$('.selectedImg').attr('src', 'data:image/png;base64, ' + $(this).data('imgsrc'));
+							sessionStorage.setItem('billing', 'true');
+							sessionStorage.setItem('price', $(this).data('price'));
+							sessionStorage.setItem('productCode', $(this).data('productcode'));
+							sessionStorage.setItem('birdCountRequired', $(this).data('birdcountrequired'));
+							clearBillingValues();
+							registerBillingFunctions();
 						}
 
 					});
@@ -48,6 +61,7 @@ function createProduct(obj) {
 	product.productCode = obj.productCode;
 	product.name = obj.name;
 	product.image = obj.image;
+	product.price = obj.price;
 	return product;
 }
 
@@ -62,5 +76,71 @@ function addProductToStorage(product) {
 		prodArr = JSON.parse(products);
 	}
 	prodArr.push(product);
-	localStorage.setItem('products',JSON.stringify(prodArr));
+	localStorage.setItem('products', JSON.stringify(prodArr));
+}
+
+function registerBillingFunctions() {
+	$('.submitPrint').keypress(function(event) {
+		if (event.keyCode == 10 || event.keyCode == 13) {
+			var birdCountRequired = sessionStorage.getItem('birdCountRequired');
+			var price = $('#priceTxtFld' + (birdCountRequired == 'Y' ? "_3" : "")).val();
+			var quantity = $('#QtyTxtFld' + (birdCountRequired == 'Y' ? "_3" : "")).val();
+			var birdCount = $('#brdTxtFld' + (birdCountRequired == 'Y' ? "_3" : "")).val();
+			if(birdCount == undefined){
+				birdCount = 0;
+			} else if(birdCount == ""){
+				birdCount = 1;
+			}
+			var productCode = sessionStorage.getItem('productCode');
+			submitBilling(price, quantity, birdCount, productCode);
+		}
+	});
+	$('#QtyTxtFld').change(function() {
+		var price = sessionStorage.getItem('price');
+		var qtyTxtFld = $('#QtyTxtFld').val();
+		$('#priceTxtFld').val(qtyTxtFld * price);
+	});
+	$('#priceTxtFld').change(function() {
+		var price = sessionStorage.getItem('price');
+		var priceTxtFld = $('#priceTxtFld').val();
+		$('#QtyTxtFld').val(priceTxtFld / price);
+	});
+	$('#QtyTxtFld_3').change(function() {
+		var price = sessionStorage.getItem('price');
+		var qtyTxtFld = $('#QtyTxtFld_3').val();
+		$('#priceTxtFld_3').val(qtyTxtFld * price);
+	});
+	$('#priceTxtFld_3').change(function() {
+		var price = sessionStorage.getItem('price');
+		var priceTxtFld = $('#priceTxtFld_3').val();
+		$('#QtyTxtFld_3').val(priceTxtFld / price);
+	});
+
+}
+
+function clearBillingValues() {
+	$('#priceTxtFld').val("");
+	$('#QtyTxtFld').val("");
+	$('#priceTxtFld_3').val("");
+	$('#QtyTxtFld_3').val("");
+	$('#brdTxtFld_3').val("");
+}
+
+function submitBilling(price, quantity, birdCount, productCode) {
+
+	$.ajax({
+		url : '/customer/transaction',
+		type : "POST",
+		async : false,
+		data : {
+			price : price,
+			quantity : quantity,
+			birdCount : birdCount,
+			productCode : productCode
+		},
+		success : function(response) {
+			clearBillingValues();
+		}
+	});
+
 }

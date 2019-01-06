@@ -8,7 +8,7 @@ $(document).ready(
 							var productListDP = '';
 							var productListMD = '';
 							prodArr.forEach(function(product) {
-								productListDP += '<li class="notification"><img src="data:image/png;base64,' + product.image + '"> <span>100</span></li>';
+								productListDP += '<li class="notification"><img src="data:image/png;base64,' + product.image + '"> <span>'+product.price+'</span></li>';
 								productListMD += '<div class="modal-inputs"><img class="daily-price-catimg" src="data:image/png;base64,' + product.image + '"><input	type="text" id="price' + product.productCode
 										+ '" name="price' + product.productCode + '"></div>';
 							});
