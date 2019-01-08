@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="shortcut icon" href="assets/img/logo-fav.png">
-<title>Josya poultry Software</title>
+<title>Josya poultry software</title>
 <link rel="stylesheet" type="text/css"
 	href="assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css" />
 <link rel="stylesheet" type="text/css"
@@ -34,7 +34,7 @@
 				</div>
 				<div class="be-right-navbar">
 					<div class="page-title">
-						<span>Add Vendor</span>
+						<span>Add Category</span>
 					</div>
 					<ul class="nav navbar-nav navbar-right be-icons-nav">
 						<li class="dropdown"><a href="#" data-toggle="dropdown"
@@ -86,7 +86,7 @@
 		</nav>
 		<div class="be-left-sidebar">
 			<div class="left-sidebar-wrapper">
-				<a href="#" class="left-sidebar-toggle">Vendor</a>
+				<a href="#" class="left-sidebar-toggle">Stock</a>
 				<div class="left-sidebar-spacer">
 					<div class="left-sidebar-scroll">
 						<div class="left-sidebar-content">
@@ -132,11 +132,11 @@
 		</div>
 		<div class="be-content">
 			<div class="page-head">
-				<h2 class="page-head-title">Vendor Details</h2>
+				<h2 class="page-head-title">Category Details</h2>
 				<ol class="breadcrumb page-head-nav">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="#">Vendor</a></li>
-					<li class="active">Add Vendor</li>
+					<li><a href="#">Category</a></li>
+					<li class="active">Add category</li>
 				</ol>
 			</div>
 			<div class="main-content container-fluid">
@@ -146,28 +146,48 @@
 						<div
 							class="panel panel-default panel-border-color panel-border-color-primary">
 							<div class="panel-heading panel-heading-divider">
-								Vendor Details<span class="panel-subtitle">Vendor details
-									need to be added here</span>
+								Category Details<span class="panel-subtitle">Category
+									details need to be added here</span>
 							</div>
 							<div class="panel-body">
-								<form id="addVendor" data-parsley-validate="" novalidate="">
+								<form action="#" enctype="multipart/form-data" id="add-category"
+									data-parsley-validate="" novalidate="">
 									<div class="form-group" id="success-message"></div>
-									<div class="form-group xs-pt-10">
-										<label>Name</label> <input type="text"
+									<div class="form-group">
+										<label>Name</label> <input type="text" name="name"
 											parsley-trigger="change" required="" placeholder="Enter name"
-											class="form-control" name="vendorName">
+											autocomplete="off" class="form-control">
 									</div>
 									<div class="form-group">
-										<label>Mobile number</label> <input type="text"
-											data-parsley-type="number" parsley-trigger="change"
-											required="" placeholder="Enter mobile number"
-											class="form-control" name="mobileNumber">
-									</div>
-									<div class="form-group">
-										<label>Address</label> <input type="text"
+										<label>Category Code</label> <input type="text" name="catCode"
 											parsley-trigger="change" required=""
-											placeholder="Enter address" class="form-control"
-											name="address">
+											placeholder="Enter category code" autocomplete="off"
+											class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Description</label> <input type="text"
+											name="description" parsley-trigger="change" required=""
+											placeholder="Enter description" autocomplete="off"
+											class="form-control">
+									</div>
+									<div class="form-group">
+										<div class="be-checkbox be-checkbox-color inline">
+											<input id="check9" type="checkbox" name="displayAsParent">
+											<label for="check9">Parent category</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="dropdown">
+											<label>Category </label> <select class="form-control"
+												id="list-category">
+												<option value="select">SELECT CATEGORY</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlFile1">Upload image</label> <input
+											type="file" required="" class="form-control-file"
+											name="image" id="exampleFormControlFile1">
 									</div>
 									<div class="form-group">
 										<div class="col-xs-6">
@@ -207,37 +227,10 @@
 		type="text/javascript"></script>
 	<script src="assets/js/app-form-elements.js" type="text/javascript"></script>
 	<script src="assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="src/category/add-category.js" type="text/javascript" ></script>
+	<script src="src/category/category-list.js" type="text/javascript"></script>
 	<script type="text/javascript">
-      $(document).ready(function(){
-      	//initialize the javascript
-      	App.init();
-      	App.formElements();
-		$('form').parsley();
-		// this is the id of the form
-		$("#addVendor").submit(function(e) {
-		$('#success-message').html('');
-			var form = $(this);
-			var url = form.attr('action');
-			$.ajax({
-				   type: "POST",
-				   url: "http://localhost:6607/vendor",
-				   dataType : 'json',
-				   data: form.serialize(), // serializes the form's elements.
-				   statusCode: {
-						201: function() {
-							console.log("HERE");
-							$("#addVendor").trigger("reset");
-							$('#success-message').html('<div role="alert" class="alert alert-success alert-dismissible"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><span class="icon mdi mdi-check"></span>Vendor added successfully...</div>');
-						},
-						500: function() {
-							$('#success-message').html('<div role="alert" class="alert alert-danger alert-dismissible"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><span class="icon mdi mdi-check"></span>Vendor Already Exist...</div>');
-						},
-					}
-				 });
-
-			e.preventDefault(); // avoid to execute the actual submit of the form.
-		});
-      });
-    </script>
+		
+	</script>
 </body>
 </html>
