@@ -132,19 +132,14 @@
 		</div>
 		<div class="be-content">
 			<div class="main-content container-fluid">
-				<div class="gallery-container" id="categoryDisplay">
+			<div class="back-btn">
+				<a href="exp-category.html" class="back-link">Back</a>
+			</div>
+				<div class="gallery-container" id="subCategory">
 					<div class="item item item-menu-img">
 						<div class="photo">
 							<div class="img">
-								<a href="exp-category.html" class="openModal"><img
-									src="assets/img/gallery/img2.jpg" alt="Gallery Image"></a>
-							</div>
-						</div>
-					</div>
-					<div class="item item item-menu-img">
-						<div class="photo">
-							<div class="img">
-								<a href="#" class="openModal"><img
+								<a href="#" class="openModal" data-modal="" data-src=""><img
 									src="assets/img/gallery/img2.jpg" alt="Gallery Image"></a>
 							</div>
 						</div>
@@ -153,6 +148,35 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- Expences entry -->
+	<div class="modal fade" id="expenditureData" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Daily Price</h4>
+				</div>
+				<div class="modal-body" id="dailyPriceInput">
+					<div class="modal-inputs">
+						<input type="text" name="">
+					</div>
+				</div>
+				<div class="modal-submit">
+					<input type="button" class="price-submits" value="Submit"
+						id="priceSubmit">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="dailyPriceModalClose">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Expences entry -->
 	<script src="assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
 	<script
 		src="assets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"
@@ -175,8 +199,7 @@
 		type="text/javascript"></script>
 	<script src="assets/js/app-form-elements.js" type="text/javascript"></script>
 	<script src="assets/lib/parsley/parsley.min.js" type="text/javascript"></script>
-	<script type="text/javascript" src="src/category/add-category.js" type="text/javascript" ></script>
-	<script src="src/category/category-list.js" type="text/javascript"></script>
+	<script src="src/category/sub-category.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		
 	</script>

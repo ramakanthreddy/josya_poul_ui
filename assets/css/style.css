@@ -17109,6 +17109,7 @@ input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-c
   font-weight: 400;
   vertical-align: middle;
   border-left: 1px solid #e4dfdf;
+  text-align: center;
 }
 .table-condensed > thead > tr > th {
   padding-top: 10px;
@@ -20443,4 +20444,20 @@ fieldset[disabled] .full-calendar .fc-button.active {
 }
 .new-customer-submit{
 	margin-top:0px !important;
+}
+.back-btn{
+	margin: 10px 0px;
+}
+.back-link{
+	color: #25b9c8;
+	font-size: 18px;
+}
+.back-link:hover{
+	color:#ff4242;	
+}
+.name-tag{
+	text-align: right;
+    margin: 10px 0px;
+    padding: 10px 50px;
+    font-size: 15px;
 }
