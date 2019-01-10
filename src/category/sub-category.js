@@ -27,4 +27,37 @@ $(document).ready(function(){
 			},
 		}
 	});
+	
+	$('#expenditureSubmit').click(function(){
+		var amount = $('#amount').val();
+		var description = $('#description').val();
+		var catCode = sessionStorage.getItem('selectedThirdCatCode');
+		$
+		.ajax({
+			type : "POST",
+			url : "/category/transaction",
+			data : {amount:amount,description:description,catCode:catCode},
+			statusCode : {
+				201 : function(response) {
+					$("#add-category").trigger("reset");
+					var html = $('#list-category').html();
+					html += '<option value="' + data.get('catCode') + '">' + data.get('name') + '</option>';
+					$('#list-category').html(html);
+					$('#success-message')
+							.html(
+									'<div role="alert" class="alert alert-success alert-dismissible"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><span class="icon mdi mdi-check"></span>Category  added successfully...</div>');
+				},
+				403 : function() {
+					$('#success-message')
+							.html(
+									'<div role="alert" class="alert alert-danger alert-dismissible"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><span class="icon mdi mdi-check"></span>Category Already Exist..</div>');
+				},
+				500 : function() {
+					$('#success-message')
+							.html(
+									'<div role="alert" class="alert alert-danger alert-dismissible"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><span class="icon mdi mdi-check"></span>Internal server Error please contact system Admin.</div>');
+				},
+			}
+	});
+	});
 });

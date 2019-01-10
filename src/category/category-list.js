@@ -11,7 +11,7 @@ $(document).ready(function() {
 							url : '/category/image/' + catObj.catCode,
 							async : false,
 							success : function(data) {
-								imgStr += '<div class="item item item-menu-img" ><div class="photo"><div class="img"><a href="exp-category.html" class="parentCategory"  data-catCode="' + catObj.catCode + '" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
+								imgStr += '<div class="item item item-menu-img" ><div class="photo"><div class="img"><a href="exp-category.html" class="parentCategory openModal"  data-catCode="' + catObj.catCode + '" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
 							}
 							});
 						

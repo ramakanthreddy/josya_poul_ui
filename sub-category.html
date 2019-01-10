@@ -18,12 +18,19 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <link rel="stylesheet" type="text/css"
+	href="assets/lib/jquery.vectormap/jquery-jvectormap-1.2.2.css" />
+<link rel="stylesheet" type="text/css"
+	href="assets/lib/jqvmap/jqvmap.min.css" />
+<link rel="stylesheet" type="text/css"
 	href="assets/lib/datetimepicker/css/bootstrap-datetimepicker.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="assets/lib/select2/css/select2.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="assets/lib/bootstrap-slider/css/bootstrap-slider.css" />
 <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<link href="assets/css/category_style.css" rel="stylesheet" />
+<link href="assets/css/category_nav.css" rel="stylesheet" />
+<link href="assets/css/custom.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="be-wrapper">
@@ -157,16 +164,21 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Daily Price</h4>
+					<h4 class="modal-title">Enter expenses</h4>
 				</div>
 				<div class="modal-body" id="dailyPriceInput">
 					<div class="modal-inputs">
-						<input type="text" name="">
+						Amount :<input type="text" name="amount">
+					</div>
+				</div>
+				<div class="modal-body" id="dailyPriceInput">
+					<div class="modal-inputs">
+						Description :<input type="text" name="description">
 					</div>
 				</div>
 				<div class="modal-submit">
 					<input type="button" class="price-submits" value="Submit"
-						id="priceSubmit">
+						id="expenditureSubmit">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal"
@@ -184,6 +196,19 @@
 	<script src="assets/js/main.js" type="text/javascript"></script>
 	<script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"
 		type="text/javascript"></script>
+			<script src="assets/lib/jquery-flot/jquery.flot.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/jquery.flot.pie.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/jquery.flot.resize.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/plugins/jquery.flot.orderBars.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/plugins/curvedLines.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery.sparkline/jquery.sparkline.min.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/countup/countUp.min.js" type="text/javascript"></script>
 	<script src="assets/lib/jquery-ui/jquery-ui.min.js"
 		type="text/javascript"></script>
 	<script src="assets/lib/jquery.nestable/jquery.nestable.js"

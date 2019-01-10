@@ -12,7 +12,7 @@ $(document).ready(function(){
 						url : '/category/image/' + catObj.catCode,
 						async : false,
 						success : function(data) {
-							imgStr += '<div class="item item item-menu-img" ><div class="photo"><div class="img"><a href="sub-category.html" class="expCategory"  data-catCode="' + catObj.catCode + '" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
+							imgStr += '<div class="item item item-menu-img" ><div class="photo"><div class="img"><a href="sub-category.html" class="expCategory openModal"  data-catCode="' + catObj.catCode + '" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
 						}
 						});
 					
