@@ -39,13 +39,9 @@ $(document).ready(function(){
 			data : {amount:amount,description:description,catCode:catCode},
 			statusCode : {
 				201 : function(response) {
-					$("#add-category").trigger("reset");
-					var html = $('#list-category').html();
-					html += '<option value="' + data.get('catCode') + '">' + data.get('name') + '</option>';
-					$('#list-category').html(html);
-					$('#success-message')
-							.html(
-									'<div role="alert" class="alert alert-success alert-dismissible"><button type="button" data-dismiss="alert" aria-label="Close" class="close"><span aria-hidden="true" class="mdi mdi-close"></span></button><span class="icon mdi mdi-check"></span>Category  added successfully...</div>');
+					$('#amount').val("");
+					$('#description').val("");
+					$('#dailyPriceModalClose').click();
 				},
 				403 : function() {
 					$('#success-message')

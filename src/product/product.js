@@ -91,6 +91,9 @@ function registerBillingFunctions() {
 			} else if(birdCount == ""){
 				birdCount = 1;
 			}
+			if(quantity == undefined || quantity == ''){
+				quantity = 0;
+			}
 			var productCode = sessionStorage.getItem('productCode');
 			submitBilling(price, quantity, birdCount, productCode);
 		}
