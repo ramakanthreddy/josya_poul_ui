@@ -94,6 +94,10 @@ function registerBillingFunctions() {
 			if(quantity == undefined || quantity == ''){
 				quantity = 0;
 			}
+			
+			if(price == undefined || price == ''){
+				price = 0;
+			}
 			var productCode = sessionStorage.getItem('productCode');
 			submitBilling(price, quantity, birdCount, productCode);
 		}
