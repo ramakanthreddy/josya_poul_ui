@@ -1,5 +1,6 @@
 $(document).ready(
 		function() {
+			registerBillingFunctions();
 			localStorage.removeItem('products');
 			var imgStr = '';
 			$.ajax({
@@ -32,7 +33,6 @@ $(document).ready(
 							sessionStorage.setItem('productCode', $(this).data('productcode'));
 							sessionStorage.setItem('birdCountRequired', $(this).data('birdcountrequired'));
 							clearBillingValues();
-							registerBillingFunctions();
 						} else {
 
 							$('#expenditureThreeSec').modal('toggle');
@@ -42,7 +42,6 @@ $(document).ready(
 							sessionStorage.setItem('productCode', $(this).data('productcode'));
 							sessionStorage.setItem('birdCountRequired', $(this).data('birdcountrequired'));
 							clearBillingValues();
-							registerBillingFunctions();
 						}
 
 					});
@@ -100,6 +99,7 @@ function registerBillingFunctions() {
 			}
 			var productCode = sessionStorage.getItem('productCode');
 			submitBilling(price, quantity, birdCount, productCode);
+			event.preventDefault();
 		}
 	});
 	$('#QtyTxtFld').change(function() {
