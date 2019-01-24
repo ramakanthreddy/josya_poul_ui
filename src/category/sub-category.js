@@ -12,7 +12,7 @@ $(document).ready(function(){
 						url : '/category/image/' + catObj.catCode,
 						async : false,
 						success : function(data) {
-							imgStr += '<div class="item item item-menu-img" ><div class="photo"><div class="img"><a href="#" class="openModal"  data-catCode="' + catObj.catCode + '" ><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
+							imgStr += '<div class="item item item-menu-img" ><div class="photo"><div class="img"><a href="#" class="openModal"  data-catCode="' + catObj.catCode + '" data-catname="' + catObj.name + '"><img  src="data:image/png;base64,' + data + '" alt="Gallery Image" ></a></div></div></div>';
 						}
 						});
 					
@@ -21,7 +21,9 @@ $(document).ready(function(){
 				$('#subCategory').html(imgStr);
 				$('a.openModal').click(function(){
 					var catCode = $(this).data('catcode');
+					var catName = $(this).data('catname');
 					sessionStorage.setItem('selectedThirdCatCode',catCode);
+					$('.subCatTitle').html(catName);
 					$('#expenditureData').modal('toggle');
 				});
 			},
