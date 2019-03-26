@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="shortcut icon" href="assets/img/logo-fav.png">
+<title>Josya poultry software</title>
+<link rel="stylesheet" type="text/css"
+	href="assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="assets/lib/material-design-icons/css/material-design-iconic-font.min.css" />
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link rel="stylesheet" type="text/css"
+	href="assets/lib/jquery.vectormap/jquery-jvectormap-1.2.2.css" />
+<link rel="stylesheet" type="text/css"
+	href="assets/lib/jqvmap/jqvmap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="assets/lib/datetimepicker/css/bootstrap-datetimepicker.min.css" />
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+<link href="assets/css/category_style.css" rel="stylesheet" />
+<link href="assets/css/category_nav.css" rel="stylesheet" />
+<link href="assets/css/custom.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="be-wrapper be-fixed-sidebar">
+		<nav class="navbar navbar-default navbar-fixed-top be-top-header">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="index.html" class="navbar-brand"></a>
+				</div>
+				<div class="be-right-navbar">
+					<ul class="nav navbar-nav navbar-right be-user-nav">
+						<li class="dropdown"><a href="#" data-toggle="dropdown"
+							role="button" aria-expanded="false" class="dropdown-toggle"><img
+								src="assets/img/avatar.png" alt="Avatar"><span
+								class="user-name">Túpac Amaru</span></a>
+							<ul role="menu" class="dropdown-menu">
+								<li>
+									<div class="user-info">
+										<div class="user-name">Túpac Amaru</div>
+										<div class="user-position online">Available</div>
+									</div>
+								</li>
+								<li><a href="#"><span class="icon mdi mdi-face"></span>
+										Account</a></li>
+								<li><a href="#"><span class="icon mdi mdi-settings"></span>
+										Settings</a></li>
+								<li><a href="#"><span class="icon mdi mdi-power"></span>
+										Logout</a></li>
+							</ul></li>
+					</ul>
+					<div class="page-title">
+						<span>Search Customer</span>
+					</div>
+					<ul class="nav navbar-nav navbar-right be-icons-nav">
+						<li class="dropdown"><a href="#" role="button"
+							aria-expanded="false" class="be-toggle-right-sidebar"><span
+								class="icon mdi mdi-settings"></span></a></li>
+						<li class="dropdown"><a id="sendEmail" href="#" role="button"
+							aria-expanded="false" class="be-toggle-right-sidebar"><img src="assets/img/email.jpg"
+								style="width: 30px;" id="send-email"></a></li>
+						<li class="dropdown"><a href="#" data-toggle="dropdown"
+							role="button" aria-expanded="false" class="dropdown-toggle"
+							id="dailyPriceIcon"> <img src="assets/img/daily-price.png"
+								style="width: 30px;" id="dailyprice-entry" data-toggle="modal"
+								data-target="#price-input">
+						</a>
+							<ul class="dropdown-menu be-notifications">
+								<li>
+									<div class="title">Daily Price</div>
+									<div class="list">
+										<div class="be-scroller">
+											<div class="content">
+												<ul id="productListDP">
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="be-left-sidebar">
+			<div class="left-sidebar-wrapper">
+				<a href="#" class="left-sidebar-toggle">Dashboard</a>
+				<div class="left-sidebar-spacer">
+					<div class="left-sidebar-scroll">
+						<div class="left-sidebar-content">
+							<ul class="sidebar-elements">
+								<li class="divider">Menu</li>
+								<li class="active"><a href="index.html"><i
+										class="icon mdi mdi-home"></i><span>Dashboard</span></a></li>
+								<li class="parent"><a href="#"><i
+										class="icon mdi mdi-face"></i><span>Stock</span></a>
+									<ul class="sub-menu">
+										<li><a href="add-stock.html">Add stock</a></li>
+										<li><a href="ui-buttons.html">Stock </a></li>
+									</ul></li>
+								<li class="parent"><a href="#"><i
+										class="icon mdi mdi-face"></i><span>Product</span></a>
+									<ul class="sub-menu">
+										<li><a href="add-product.html">Add Product</a></li>
+										<li><a href="product-list.html">Product List</a></li>
+									</ul></li>
+								<li class="parent"><a href="#"><i
+										class="icon mdi mdi-face"></i><span>Vendor</span></a>
+									<ul class="sub-menu">
+										<li><a href="add-vendor.html">Add Vendor</a></li>
+										<li><a href="vendor-list.html">Vendor List</a></li>
+									</ul></li>
+								<li class="parent"><a href="#"><i
+										class="icon mdi mdi-face"></i><span>Customer</span></a>
+									<ul class="sub-menu">
+										<li><a href="add-customer.html">Add Customer</a></li>
+										<li><a href="customer-list.html">Customer List</a></li>
+									</ul></li>
+								<li class="parent"><a href="#"><i
+										class="icon mdi mdi-face"></i><span>Category</span></a>
+									<ul class="sub-menu">
+										<li><a href="add-category.html">Add Category</a></li>
+										<li><a href="category-list.html">Category List</a></li>
+									</ul></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="be-content">
+			<div class="main-content container-fluid">
+				<div class="gallery-container" id="productDisplay">
+					<div class="item item item-menu-img">
+						<div class="photo">
+							<div class="img customer-img">
+								<a href="#" class="openModal"><img
+									src="assets/img/customer.png" alt="Customer"></a>
+                  <p>Name : <span>Name</span></p>
+                  <p>Aarea : <span>Town/Village</span></p>
+                  <p>Mobile : <span>Mobile Number</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="item item item-menu-img">
+						<div class="photo">
+							<div class="img customer-img">
+                <a href="#" class="openModal"><img
+                  src="assets/img/customer.png" alt="Customer"></a>
+                  <p>Name : <span>Name</span></p>
+                  <p>Aarea : <span>Town/Village</span></p>
+                  <p>Mobile : <span>Mobile Number</span></p>
+              </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- two fields -->
+	<div id="expenditureSec" class="modal" style="display: none;"
+		tabindex="-1">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="modalContainer row">
+						<div class="col-md-12 categ-image">
+							<img class="selectedImg" alt="selectedCateg">
+						</div>
+					</div>
+					<div class="modalContainer row">
+						<div class="col-md-6 inputContainer">
+							<div class="priceInput">
+								<img src="assets/img/rupee.png" /> <input type="text"
+									id="priceTxtFld" class="form-control submitPrint priceTxtFld" />
+							</div>
+						</div>
+						<div class="col-md-6 inputContainer">
+							<div class="weightInput">
+								<img src="assets/img/ckn.png" /> <input type="text"
+									id="QtyTxtFld" class="form-control submitPrint QtyTxtFld" />
+							</div>
+						</div>
+					</div>
+					<input type="button" value="submit"	class="dailySubmit submitPrint" id="dailyPrice" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- two fields -->
+
+	<!-- three fields -->
+	<div id="expenditureThreeSec" class="modal" style="display: none;"
+		tabindex="-1">
+		<div class="modal-dialog modal-lg">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="modalContainer row">
+						<div class="col-md-12 categ-image">
+							<img class="selectedImg" alt="selectedCateg">
+						</div>
+						<div class="col-md-4 inputContainer">
+							<div class="priceInput">
+								<img src="assets/img/rupee.png" /> <input type="text"
+									id="priceTxtFld_3" class="form-control submitPrint priceTxtFld" />
+							</div>
+						</div>
+						<div class="col-md-4 inputContainer">
+							<div class="priceInput">
+								<img src="assets/img/ckn.png" /> <input type="text"
+									id="QtyTxtFld_3" class="form-control submitPrint QtyTxtFld" />
+							</div>
+						</div>
+						<div class="col-md-4 inputContainer">
+							<div class="weightInput">
+								<img src="assets/img/number.png" /> <input type="text"
+									id="brdTxtFld_3" class="form-control submitPrint brdTxtFld" />
+							</div>
+						</div>
+					</div>
+					<input type="button" value="submit" class="dailySubmit submitPrint" id="dailyPrice" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- three fields -->
+
+	<!-- Price entry -->
+	<div class="modal fade" id="price-input" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Daily Price</h4>
+				</div>
+				<div class="modal-body" id="dailyPriceInput">
+					<div class="modal-inputs">
+						<img src="assets/img/mail_chimp.png" class="daily-price-catimg"><input
+							type="text" name="">
+					</div>
+				</div>
+				<div class="modal-submit">
+					<input type="button" class="price-submits" value="Submit"
+						id="priceSubmit">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						id="dailyPriceModalClose">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Price entry -->
+	<script src="assets/lib/jquery/jquery.min.js" type="text/javascript"></script>
+	<script
+		src="assets/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"
+		type="text/javascript"></script>
+	<script src="assets/js/main.js" type="text/javascript"></script>
+	<script src="assets/lib/bootstrap/dist/js/bootstrap.min.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/jquery.flot.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/jquery.flot.pie.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/jquery.flot.resize.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/plugins/jquery.flot.orderBars.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery-flot/plugins/curvedLines.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jquery.sparkline/jquery.sparkline.min.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/countup/countUp.min.js" type="text/javascript"></script>
+	<script src="assets/lib/jquery-ui/jquery-ui.min.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jqvmap/jquery.vmap.min.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/jqvmap/maps/jquery.vmap.world.js"
+		type="text/javascript"></script>
+	<script
+		src="assets/lib/jquery.magnific-popup/jquery.magnific-popup.min.js"
+		type="text/javascript"></script>
+	<script src="assets/lib/masonry/masonry.pkgd.min.js"
+		type="text/javascript"></script>
+	<script src="assets/js/app-page-gallery.js" type="text/javascript"></script>
+	<script src="assets/js/app-dashboard.js" type="text/javascript"></script>
+	<script src="assets/lib/jquery.niftymodals/dist/jquery.niftymodals.js"
+		type="text/javascript"></script>
+	<script src="src/product/product.js"></script>
+	<script src="src/dailyprice/dailypricedisplay.js"></script>
+	<script src="src/commons/main.js"></script>
+	<style>
+.dropdown .notification img {
+	width: 50px;
+}
+</style>
+</body>
+</html>

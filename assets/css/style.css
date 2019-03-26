@@ -225,6 +225,17 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
+.select-checks input[type="checkbox"]{
+  display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: sub;
+    margin-left: 20px !important;
+}
+.select-checks label{
+  display: inline-block;
+  word-break: break-all;
+}
 input {
   line-height: normal;
 }
@@ -12435,6 +12446,16 @@ li.L9 {
 .item-menu-img{
 	float:left;
 }
+
+.customer-details-head{
+    margin-top: 15px;
+    text-align: right;
+    font-size: 20px;
+    color: #12c78e;
+}
+.customer-details-head span{
+  color: #ef2323;
+}
 .gallery-container .item {
   width: 25%;
   margin-bottom: 20px;
@@ -12449,6 +12470,8 @@ li.L9 {
 .gallery-container .item .photo .img img {
   width: 100%;
   height: 200px;
+  color: #1ccad4;
+  font-size: 40px;
 }
 .gallery-container .item .photo .img .over {
   top: 0;
@@ -20464,4 +20487,8 @@ fieldset[disabled] .full-calendar .fc-button.active {
     margin: 10px 0px;
     padding: 10px 50px;
     font-size: 15px;
+}
+.customer-img p{
+  margin: 10px 10px;
+  color:#828282;
 }
