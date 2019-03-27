@@ -12464,6 +12464,9 @@ li.L9 {
 .search-btn img{
   width: 33px;
 }
+.bill-input{
+  height: 40px;
+}
 .customer-details-head{
     margin-top: 15px;
     text-align: right;
